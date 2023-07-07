@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Hangman {
+    
     public static String[] words = {"aardvark", "albatross", "alpaca", "ant", "baboon", "badger",
             "banana cinnamon ball python", "bandicoot", "barracuda", "bat", "bear", "beaver",
             "bat", "bear", "black german shepherd", "brown tree snake", "bulldog", "camel",
@@ -13,6 +14,7 @@ public class Hangman {
             "shark", "sheep", "skunk", "sloth", "snake", "spider", "stork", "swan", "syrian hamster",
             "tiger", "toad", "trout", "turkey", "turtle", "weasel", "whale", "wolf",
             "wombat", "zebra"};
+    
     public static String[] gallows = {"+---+\n" +
             "|   |\n" +
             "    |\n" +
@@ -70,9 +72,7 @@ public class Hangman {
                     " =========\n"};
 
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
-
         // Select difficulty
         System.out.println("Pick your difficulty: ");
         System.out.println("For Easy - e");
@@ -80,10 +80,10 @@ public class Hangman {
         System.out.println("For Easy - h");
 
         char difficulty = scan.next().charAt(0);
-
         int errors = 0;
-        int correct = 0;
+        int correct = 0;        
         StringBuilder misses = new StringBuilder(6);
+        
         // Randomly select secret word
         double randomNumber = Math.random() * words.length + 1;
         String secretWord = words[(int) randomNumber];
